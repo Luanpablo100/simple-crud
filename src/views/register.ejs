@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('parts/mainGeneral', { title: 'Cadastrar', css: 'register'}) %>
+</head>
+<body>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <section>
+
+        </section>
+        <section>
+            <form action="/add" method="POST">
+                <input type="text" name="name" id="name">
+                <button type="submit">Enviar</button>
+                <% if( typeof msg !== 'undefined' ) {%>
+                    <%= msg %>
+                <% }%>
+            </form>
+        </section>
+        <section>
+
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>
