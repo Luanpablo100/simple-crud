@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <%- include('parts/mainGeneral', { title: 'Cadastrar', css: 'register'}) %>
+    <%- include('parts/headGeneral', { title: 'Cadastrar', css: 'register'}) %>
 </head>
 <body>
-    <header>
-        <nav>
-
-        </nav>
-    </header>
+    <%- include('parts/headerGeneral', { title: 'Cadastrar', css: 'register'}) %>
     <main>
         <section>
 
         </section>
         <section>
             <form action="/add" method="POST">
-                <input type="text" name="name" id="name">
-                <button type="submit">Enviar</button>
+                <div class="input-container">
+                    <input type="text" id="name" required/>
+                    <label for="name">Primeiro Nome</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="name" required/>
+                    <label for="name">Último Nome</label>
+                </div>
+                <div class="input-container">
+                    <input type="email" id="email" required/>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-container">
+                    <input type="number" id="age" required/>
+                    <label for="email">Idade</label>
+                  </div>
+
+               <div class="wrapper">
+                    <button class="">
+                    Enviar
+                    <div class="success">
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 29.756 29.756" style="enable-background:new 0 0 29.756 29.756;" xml:space="preserve">
+      
+	                    <path d="M29.049,5.009L28.19,4.151c-0.943-0.945-2.488-0.945-3.434,0L10.172,18.737l-5.175-5.173   c-0.943-0.944-2.489-0.944-3.432,0.001l-0.858,0.857c-0.943,0.944-0.943,2.489,0,3.433l7.744,7.752   c0.944,0.943,2.489,0.943,3.433,0L29.049,8.442C29.991,7.498,29.991,5.953,29.049,5.009z"/>
+                        </svg>
+                    </div>
+                    </button>
+                </div>
+
+                <script>
+                    let btn = document.querySelector("button");
+
+                    btn.addEventListener("click", active);
+
+                    function active() {
+                         btn.classList.toggle("is_active");
+                    }
+                </script>
+
                 <% if( typeof msg !== 'undefined' ) {%>
                     <%= msg %>
                 <% }%>
             </form>
+              <script>
+                  const inputs = document.querySelectorAll("input");
+
+                    inputs.forEach((input) => {
+                    input.addEventListener("blur", (event) => {
+                    if (event.target.value) {
+                        input.classList.add("is-valid");
+                     } else {
+                        input.classList.remove("is-valid");
+                    }
+  });
+});
+              </script>
         </section>
         <section>
 
