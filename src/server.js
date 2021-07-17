@@ -14,18 +14,22 @@ app.get('/add', (req, res) => res.render(views + "register"))
 app.post('/add', (req, res) => {
     let userData = req.body
     console.log(userData)
-    return res.render(views + 'register',{msg: `Cadastro realizado! ${userData.firstname}, E-mail:${userData.email}`})
+    setTimeout(() => {
+        return res.render(views + 'register',{msg: `Cadastro realizado! ${userData.firstname}, E-mail:${userData.email}`})
+    }, 2000)
+    
 })
 
 app.get('/profile', async(req, res) => {
-    try{
-        await fetch(`https://api.github.com/users/Luanpablo100`)
-        .then(res => res.json()
-            .then(data => {
-                res.render('profile', {user: data.login})
-            })
-        )
-    }
+    // try{
+    //     await fetch(`https://api.github.com/users/Luanpablo100`)
+    //     .then(res => res.json()
+    //         .then(data => {
+    //             res.render('profile', {user: data.login})
+    //         })
+    //     )
+    // }
+    return res.render(views + 'profile')
 })
     
 

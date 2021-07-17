@@ -8,7 +8,7 @@
     "dev": "nodemon src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Luan Oliveira",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",

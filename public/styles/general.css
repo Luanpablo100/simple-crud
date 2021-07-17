@@ -25,7 +25,7 @@ nav ul {
     list-style: none;
 }
 
-nav ul a {
+a {
     margin-left: 10px;
     position: relative;
     color: #fff;
@@ -52,3 +52,30 @@ a:hover:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    font-size: 12px;
+}
+
+footer div.div-content-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-footer-icon{
+    margin: 5px 10px;
+}
+
+.div-footer-icon, .div-footer-icon a{
+    display: flex;
+    align-items: center;
+}
+
+.footer-icon {
+    height: 30px;
+}
+
